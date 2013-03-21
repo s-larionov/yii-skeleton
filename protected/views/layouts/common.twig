@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="{{ App.language }}">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ this.pageTitle }}</title>
+</head>
+<body>
+{{ include('common/header.twig') }}
+{{ block('content') }}
+{{ include('common/footer.twig') }}
+</body>
+</html>
