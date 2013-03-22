@@ -43,6 +43,11 @@ server {
 	set $www_root /opt/domain.com/public;
 	set $app_mode production;
 
+	# Всех пришедших на домен не по адресу domain.com редиректим на него
+	if ($host !~ ^domain.com) {
+		rewrite ^(.*)$ http://domain.com$1 permanent;
+	}
+
 	include include/yii.conf;
 }
 ```
